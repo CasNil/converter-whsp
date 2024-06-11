@@ -18,29 +18,35 @@ public class App {
             }
 
             System.out.println("Enter amount: ");
-            double amount = scanner.nextDouble();
+
+            if (scanner.hasNextDouble()) {
+                double amount = scanner.nextDouble();
 
 
-            switch (choice) {
-                case "1":
-                    Conversion.SEK_to_USD(amount);
-                    break;
-                case "2":
-                    Conversion.USD_to_SEK(amount);
-                    break;
-                case "3":
-                    Conversion.SEK_to_Euro(amount);
-                    break;
-                case "4":
-                    Conversion.Euro_to_SEK(amount);
-                    break;
+                switch (choice) {
+                    case "1":
+                        Conversion.SEK_to_USD(amount);
+                        break;
+                    case "2":
+                        Conversion.USD_to_SEK(amount);
+                        break;
+                    case "3":
+                        Conversion.SEK_to_Euro(amount);
+                        break;
+                    case "4":
+                        Conversion.Euro_to_SEK(amount);
+                        break;
 
-                default:
-                    System.err.println("Invalid choice. Please try again.");
-                    scanner.nextLine();
-                    break;
-
+                    default:
+                        System.err.println("Invalid choice. Please try again.");
+                        scanner.nextLine();
+                        break;
+                }
+            } else {
+                System.err.println("Invalid amount. Please try again.");
+                scanner.next();
             }
         }
+        scanner.close();
     }
 }
