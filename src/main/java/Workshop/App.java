@@ -12,6 +12,7 @@ public class App {
 
             System.out.println("Enter your choice: ");
             String choice = scanner.next();
+
             if (choice.equals("0")) {
                 System.out.println("Thank you for using the currency converter");
                 break;
@@ -25,16 +26,16 @@ public class App {
 
                 switch (choice) {
                     case "1":
-                        Conversion.SEK_to_USD(amount);
+                        Conversion.sekToUsd(amount);
                         break;
                     case "2":
-                        Conversion.USD_to_SEK(amount);
+                        Conversion.usdToSek(amount);
                         break;
                     case "3":
-                        Conversion.SEK_to_Euro(amount);
+                        Conversion.sekToEuro(amount);
                         break;
                     case "4":
-                        Conversion.Euro_to_SEK(amount);
+                        Conversion.euroToSEK(amount);
                         break;
 
                     default:
